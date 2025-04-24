@@ -1,0 +1,14 @@
+E:\Парлел\lab2\ThreadMinFinder\bin\Debug\net9.0\ThreadMinFinder.exe
+E:\Парлел\lab2\ThreadMinFinder\bin\Debug\net9.0\ThreadMinFinder.deps.json
+E:\Парлел\lab2\ThreadMinFinder\bin\Debug\net9.0\ThreadMinFinder.runtimeconfig.json
+E:\Парлел\lab2\ThreadMinFinder\bin\Debug\net9.0\ThreadMinFinder.dll
+E:\Парлел\lab2\ThreadMinFinder\bin\Debug\net9.0\ThreadMinFinder.pdb
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.GeneratedMSBuildEditorConfig.editorconfig
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.AssemblyInfoInputs.cache
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.AssemblyInfo.cs
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.csproj.CoreCompileInputs.cache
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.dll
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\refint\ThreadMinFinder.dll
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.pdb
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ThreadMinFinder.genruntimeconfig.cache
+E:\Парлел\lab2\ThreadMinFinder\obj\Debug\net9.0\ref\ThreadMinFinder.dll
