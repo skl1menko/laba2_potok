@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThreadMinFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e1221f7be5ce0734aa3f4025b86f9dedcabff7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThreadMinFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThreadMinFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

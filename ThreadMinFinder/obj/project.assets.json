@@ -8,24 +8,25 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alkli\\.nuget\\packages\\": {}
+    "/Users/sashaklymenko/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Парлел\\lab2\\ThreadMinFinder\\ThreadMinFinder.csproj",
+      "projectUniqueName": "/Users/sashaklymenko/Desktop/1/laba2_potok/ThreadMinFinder/ThreadMinFinder.csproj",
       "projectName": "ThreadMinFinder",
-      "projectPath": "E:\\Парлел\\lab2\\ThreadMinFinder\\ThreadMinFinder.csproj",
-      "packagesPath": "C:\\Users\\alkli\\.nuget\\packages\\",
-      "outputPath": "E:\\Парлел\\lab2\\ThreadMinFinder\\obj\\",
+      "projectPath": "/Users/sashaklymenko/Desktop/1/laba2_potok/ThreadMinFinder/ThreadMinFinder.csproj",
+      "packagesPath": "/Users/sashaklymenko/.nuget/packages/",
+      "outputPath": "/Users/sashaklymenko/Desktop/1/laba2_potok/ThreadMinFinder/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alkli\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/sashaklymenko/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

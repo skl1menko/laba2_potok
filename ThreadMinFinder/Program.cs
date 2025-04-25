@@ -7,6 +7,7 @@ class Program
     static int globalMin = int.MaxValue;
     static int globalMinIndex = -1;
     static object lockObj = new object();
+    static CountdownEvent countdown;
 
     static void Main(string[] args)
     {
@@ -14,33 +15,23 @@ class Program
         int threadCount = 100;
         array = GenerateArray(size);
 
+        countdown = new CountdownEvent(threadCount); // Очікуємо завершення threadCount потоків
         int chunkSize = size / threadCount;
-        Thread[] threads = new Thread[threadCount];
 
         for (int i = 0; i < threadCount; i++)
         {
             int start = i * chunkSize;
             int end = (i == threadCount - 1) ? size : start + chunkSize;
 
-            threads[i] = new Thread(() => FindLocalMin(start, end));
-            threads[i].Start();
+            Thread thread = new Thread(() => {
+                FindLocalMin(start, end);
+                countdown.Signal(); // Потік завершив роботу
+            });
+
+            thread.Start();
         }
 
-        // Очікуємо завершення всіх потоків (без Join)
-        while (true)
-        {
-            bool allDone = true;
-            foreach (var t in threads)
-            {
-                if (t.IsAlive)
-                {
-                    allDone = false;
-                    break;
-                }
-            }
-
-            if (allDone) break;
-        }
+        countdown.Wait(); // Очікуємо завершення всіх потоків
 
         Console.WriteLine($"Minimum value: {globalMin}");
         Console.WriteLine($"Index: {globalMinIndex}");

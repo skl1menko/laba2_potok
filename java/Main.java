@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.CountDownLatch;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,35 +7,52 @@ public class Main {
         int[] array = new int[size];
         Random rand = new Random();
 
+        // Генерація випадкового масиву
         for (int i = 0; i < size; i++) {
             array[i] = rand.nextInt(1000);
         }
-        array[rand.nextInt(size)] = -rand.nextInt(100); // мінімум
+        array[rand.nextInt(size)] = -rand.nextInt(100); // Випадковий мінімум
 
         int threadCount = 100;
         Thread[] threads = new Thread[threadCount];
         MinResult result = new MinResult();
-        //розбиття масиву на частини рівні кількості потоків
+
+        CountDownLatch latch = new CountDownLatch(threadCount); // Синхронізація завершення потоків
+
         int chunkSize = size / threadCount;
 
         for (int i = 0; i < threadCount; i++) {
             int start = i * chunkSize;
-            //рівномірне розбиття масиву
-            //останній потік обробляє залишок масиву
             int end = (i == threadCount - 1) ? size : start + chunkSize;
-            threads[i] = new MinFinder(array, start, end, result);
+
+            // Кожен потік зменшує лічильник після завершення
+            threads[i] = new Thread(() -> {
+                int localMin = array[start];
+                int localIndex = start;
+                for (int j = start + 1; j < end; j++) {
+                    if (array[j] < localMin) {
+                        localMin = array[j];
+                        localIndex = j;
+                    }
+                }
+
+                synchronized (result) {
+                    if (localMin < result.minValue) {
+                        result.minValue = localMin;
+                        result.minIndex = localIndex;
+                    }
+                }
+
+                latch.countDown(); // Потік завершився
+            });
+
             threads[i].start();
         }
 
-        while (true) {
-            boolean allDone = true;
-            for (Thread t : threads) {
-                if (t.isAlive()) {
-                    allDone = false;
-                    break;
-                }
-            }
-            if (allDone) break;
+        try {
+            latch.await(); // Чекаємо завершення всіх потоків
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         System.out.println("Minimum value: " + result.minValue);
